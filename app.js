@@ -28,15 +28,13 @@ bot.context.db = { command: "", sum: "" };
 bot.start(async (ctx) => {
   const { id, username, first_name } = ctx.from;
 
-  const uid = id;
-
   ctx.replyWithHTML(
     `Привет, ${first_name}!✋\nЯ <b>saveMoney_bot</b>, давай будем хранить твой денежки правильно\n\n` +
       "/commands 👈 список команд",
     keyboardCommand.reply()
   );
   const user = {
-    uid,
+    uid: id,
     username,
     first_name,
   };
@@ -44,9 +42,7 @@ bot.start(async (ctx) => {
   const res = await axios.get(`${process.env.CHAT_APP_DB_URL}/users.json`);
 
   const check = Object.keys(res.data);
-  if (!check.includes(uid)) {
-    return addUserData(...Object.values(user));
-  } else {
+  if (!check.includes(id)) {
     addUserData(...Object.values(user));
   }
 });
