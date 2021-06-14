@@ -1,0 +1,32 @@
+{
+  "name": "telegram-firebase-bot-challenge",
+  "version": "1.0.0",
+  "description": "Hi! В этом задании тебе предстоит написать **Telegram-бота**, который будет помогать вести учет финансов. Бот принимает от пользователей сообщения в формате *<знак><сумма><категория_расхода>* и записывает эту информацию в базу данных.   Когда пользователь захочет получить отчет по своим расходам, он может отправить боту сообщение с заранее заготовленным текстом, например, **\"status\"** и бот в ответ должен прислать статистику по расходам за все время или за определенный период.",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "module",
+    "url": "git+https://github.com/TsybezovSergey/telegram-firebase-bot-challenge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TsybezovSergey/telegram-firebase-bot-challenge/issues"
+  },
+  "homepage": "https://github.com/TsybezovSergey/telegram-firebase-bot-challenge#readme",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "canvas": "^2.7.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "firebase-admin": "^9.7.0",
+    "nodemon": "^2.0.7",
+    "telegraf": "^4.3.0",
+    "telegram-keyboard": "^2.2.6",
+    "webp-converter": "^2.3.3"
+  }
+}
