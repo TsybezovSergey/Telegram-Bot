@@ -185,6 +185,6 @@ bot.action(["Add", "Reduce", "Cost"], async (ctx) => {
 });
 
 bot.launch().then(() => console.log("Bot is running"));
-const PORT = 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`My server is running on port ${PORT}`));
 // express не нужен
