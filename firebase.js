@@ -1,17 +1,16 @@
 const admin = require('firebase-admin');
-const dotenv = require('dotenv').config().parsed;
+require('dotenv').config().parsed;
 
 // Fetch the service account key JSON file contents
-const serviceAccount = require('./telegraph-bot-1ff12e952738.json');
+const serviceAccount = require('./telegraph-bot-firebase-adminsdk.json');
 
-// Initialize the app with a service account, granting admin privileges
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
   databaseURL: process.env.CHAT_APP_DB_URL,
   databaseAuthVariableOverride: null,
 });
 
-// As an admin, the app has access to read and write all data, regardless of Security Rules
+
 const db = admin.database();
 const dbRef = db.ref();
 

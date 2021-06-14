@@ -3,7 +3,7 @@ const {
   Telegraf, Stage, Scenes, session,
 } = require('telegraf');
 const fs = require('fs');/// потом дропнуть файлы
-const dotenv = require('dotenv').config().parsed;
+require('dotenv').config().parsed;
 const express = require('express');
 const webp = require('webp-converter');
 const { keyboardCommand, keyboardAddReduce } = require('./keyboard.js');
@@ -46,12 +46,13 @@ bot.start(async (ctx) => {
     username,
     first_name,
   };
-  const res = await axios.get(`${process.env.CHAT_APP_DB_URL}/users.json`);
 
-  const check = Object.keys(res.data);
-  if (!check.includes(uid)) {
+  const res = await axios.get(`${process.env.CHAT_APP_DB_URL}/users.json`)
+
+  // const check = Object.keys(res.data);
+  // if (!check.includes(uid)) {
     addUserData(...Object.values(user));
-  }
+  // }
 });
 
 bot.hears('Commands', (ctx) => {
