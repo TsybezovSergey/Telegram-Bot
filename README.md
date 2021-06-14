@@ -4,10 +4,18 @@
 
 Полный стек технологий:
     "axios"
+    
     "canvas"
+    
     "express"
+    
     "firebase-admin"
+    
     "nodemon"
+    
     "telegraf"
+    
     "telegram-keyboard"
+    
     "webp-converter"
+    
